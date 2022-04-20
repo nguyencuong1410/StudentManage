@@ -23,18 +23,19 @@ namespace StudentManage.Service
             return _studentData.GetData();
         }
 
+        #region INPUT INFO STUDENT
         // Input info student
         public Student InputStudent()
         {
             WindsorContainer container = new WindsorContainer();
             container.Install(new ServiceInstaller());
             var _stuService = container.Resolve<IStudentService>();
-            List<Student> list_student = _stuService.GetDataStudent();
+            List<Student> listStudent = _stuService.GetDataStudent();
             Student _student = new Student();
             Console.Write("ID: ");
             // check trùng ID
             string check = Console.ReadLine();
-            foreach(var s in list_student)
+            foreach(var s in listStudent)
             {
                 if(check == s.MaSV)
                 {
@@ -57,21 +58,33 @@ namespace StudentManage.Service
             _studentData.AddStudent(_student);
             return _student;
         }
+        #endregion
 
-        // Show list student
-        public void ShowListStudent(List<Student> list_student)
+        #region SHOW LIST STUDENT
+        //show list student
+        public void ShowListStudent(List<Student> listStudent)
         {
-            foreach (var s in list_student)
+            if(listStudent != null && listStudent.Count > 0)
             {
-                Console.WriteLine("\n{0,-10} {1,-20} {2,-6} {3,-12} {4,-11} {5,-10}", s.MaSV,s.HoTen,s.GioiTinh,s.NgaySinh,s.Lop,s.Khoa);
+                foreach (var s in listStudent)
+                {
+                    Console.WriteLine("\n{0,-10} {1,-20} {2,-6} {3,-12} {4,-11} {5,-10}", s.MaSV, s.HoTen, s.GioiTinh, s.NgaySinh, s.Lop, s.Khoa);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Chưa có danh sách sinh viên nào");
             }
         }
+        #endregion
 
+        #region SHOW STUDENT DETAIL
         // Show student detail
-        public void StudentDetail(string index, List<Student> list_student)
+        public void StudentDetail(string index, List<Student> listStudent)
         {
-            Student result = (from s in list_student where s.MaSV == index select s).FirstOrDefault(); 
+            Student result = (from s in listStudent where s.MaSV == index select s).FirstOrDefault(); 
             Console.WriteLine("\n{0,-10} {1,-20} {2,-6} {3,-12} {4,-11} {5,-10}", result.MaSV, result.HoTen, result.GioiTinh, result.NgaySinh, result.Lop, result.Khoa);
         }
+        #endregion
     }
 }

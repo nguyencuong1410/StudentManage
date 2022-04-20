@@ -33,9 +33,9 @@ namespace StudentManage
             var _isubjectRegister = container.Resolve<ISubjectRegisterService>();
             // clean up
             container.Dispose();
-            List<Student> list_student = _istudentService.GetDataStudent();
-            List<Subject> list_subject = _isubjectService.GetDataSubject();
-            List<SubjectRegister> list_register = _isubjectRegister.GetDataRegister();
+            List<Student> listStudent = _istudentService.GetDataStudent();
+            List<Subject> listSubject = _isubjectService.GetDataSubject();
+            List<SubjectRegister> listRegister = _isubjectRegister.GetDataRegister();
             #endregion
 
             // Menu chương trình
@@ -68,7 +68,7 @@ namespace StudentManage
                 switch (Choose)
                 {
                     case 1:
-                        list_student.Add(_istudentService.InputStudent());
+                        listStudent.Add(_istudentService.InputStudent());
                         Console.WriteLine("Bạn có muốn tiếp tục(y/n) ?");
                         string pick = Console.ReadLine();
                         if (pick == "y")
@@ -80,40 +80,39 @@ namespace StudentManage
                             Console.Clear();
                             goto menu;
                         }
-                        break;
                     case 2:
                         _format.FormatLstStudent();
-                        _istudentService.ShowListStudent(list_student);
+                        _istudentService.ShowListStudent(listStudent);
                         break;
                     case 3:
                         Console.Write("Nhập ID: ");
                         string index = Console.ReadLine();
-                        while(list_student.Find(x => x.MaSV == index) == null)
+                        while(listStudent.Find(x => x.MaSV == index) == null)
                         {
                             Console.WriteLine("Không có sinh viên này!");
                             Console.WriteLine("Nhập lại ID: ");
                             index = Console.ReadLine();
                         }
                         _format.FormatLstStudent();
-                        _istudentService.StudentDetail(index, list_student);
+                        _istudentService.StudentDetail(index, listStudent);
                         break;
                     case 4:
-                        list_register.Add(_isubjectRegister.Input());
+                        listRegister.Add(_isubjectRegister.Input());
                         break;
                     case 5:
                         Console.Write("Nhập ID Student: ");
                         string index1 = Console.ReadLine();
-                        while(list_register.Find(x => x.MaSV == index1) == null)
+                        while(listRegister.Find(x => x.MaSV == index1) == null)
                         {
                             Console.WriteLine("Không có data!");
                             Console.WriteLine("Nhập lại ID Student: ");
                             index = Console.ReadLine();
                         }
                         _format.FormatLstRegister();
-                        _isubjectRegister.ShowListRegisterDetail(index1, list_register);
+                        _isubjectRegister.ShowListRegisterDetail(index1, listRegister);
                         break;
                     case 8:
-                        list_subject.Add(_isubjectService.InputSubject());
+                        listSubject.Add(_isubjectService.InputSubject());
                         Console.WriteLine("Bạn có muốn tiếp tục(y/n) ?");
                         string pick1 = Console.ReadLine();
                         if (pick1 == "y")
@@ -125,10 +124,13 @@ namespace StudentManage
                             Console.Clear();
                             goto menu;
                         }
-                        break;
                     case 9:
                         _format.FormatLstSubject();
-                        _isubjectService.ShowListSubject(list_subject);
+                        _isubjectService.ShowListSubject(listSubject);
+                        break;
+                    default:
+                        Console.WriteLine("Không có chức năng này!");
+                        Console.WriteLine("Hãy chọn các chức năng có trong menu");
                         break;
                 }
             }

@@ -29,19 +29,19 @@ namespace StudentManage.Service
             container.Install(new ServiceInstaller());
             var _stuService = container.Resolve<IStudentService>();
             var _stuSubject = container.Resolve<ISubjectService>();
-            List<Student> list_student = _stuService.GetDataStudent();
-            List<Subject> list_subject = _stuSubject.GetDataSubject();
+            List<Student> listStudent = _stuService.GetDataStudent();
+            List<Subject> listSubject = _stuSubject.GetDataSubject();
             SubjectRegister _subjectRegister = new SubjectRegister();
             Console.Write("Hiện danh sách sinh viên(y/n)? ");
             string test = Console.ReadLine();
             if(test =="y" || test == "Y")
             {
-                _stuService.ShowListStudent(list_student);
+                _stuService.ShowListStudent(listStudent);
                 Console.WriteLine("Hiện danh sách môn học(y/n)?");
                 string test1 = Console.ReadLine();
                 if (test1 == "y" || test1 == "Y")
                 {
-                    _stuSubject.ShowListSubject(list_subject);
+                    _stuSubject.ShowListSubject(listSubject);
                     Console.Write("Nhập ID sinh viên: ");
                     _subjectRegister.MaSV = Console.ReadLine();
                     Console.Write("Nhập ID môn học muốn đăng ký: ");
@@ -53,17 +53,17 @@ namespace StudentManage.Service
             }
             return _subjectRegister;
         }
-        public void ShowLstRegister(List<SubjectRegister> list_subjectregister)
+        public void ShowLstRegister(List<SubjectRegister> listSubjectregister)
         {
-            foreach(var s in list_subjectregister)
+            foreach(var s in listSubjectregister)
             {
                 Console.WriteLine("\n{0,-10}  {1,-10}  {2,-20}", s.MaSV, s.MaMH, s.TenMH);
             }
         }
-
-        public void ShowListRegisterDetail(string index, List<SubjectRegister> list_subjectregister)
+        // Show list subject follow ID Student
+        public void ShowListRegisterDetail(string index, List<SubjectRegister> listSubjectregister)
         {
-            var result = (from s in list_subjectregister where s.MaSV == index select s).FirstOrDefault();
+            var result = (from s in listSubjectregister where s.MaSV == index select s).FirstOrDefault();
             Console.WriteLine("\n{0,-10} {1,-10} {2,-20}", result.MaSV, result.MaMH, result.TenMH);
         }
     }

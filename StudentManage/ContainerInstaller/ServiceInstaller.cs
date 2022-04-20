@@ -23,8 +23,8 @@ namespace StudentManage.ContainerInstaller
             container.Register(Component.For<ISubjectService>().ImplementedBy<SubjectService>().LifestyleTransient());
             container.Register(Component.For<IStudentData>().ImplementedBy<StudentFileJson>().LifestyleTransient());
             container.Register(Component.For<ISubjectData>().ImplementedBy<SubjectFileJson>().LifestyleTransient());
-            container.Register(Component.For<ISubjectRegisterService>().ImplementedBy<SubjectRegisterService>());
-            container.Register(Component.For<ISubjectRegisData>().ImplementedBy<SubjectRegisterFile>());
+            container.Register(Component.For<ISubjectRegisterService>().ImplementedBy<SubjectRegisterService>().LifestyleTransient());
+            container.Register(Component.For<ISubjectRegisData>().ImplementedBy<SubjectRegisterFile>().LifestyleTransient());
         }
     }
 }

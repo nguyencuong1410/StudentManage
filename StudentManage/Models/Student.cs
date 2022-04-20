@@ -14,7 +14,6 @@ namespace StudentManage.Models
         public string NgaySinh { get; set; }
         public string Lop { get; set; }
         public string Khoa { get; set; }
-        public ICollection<Subject> lstSubject { get; set; }
     }
 
 }
