@@ -8,6 +8,7 @@ namespace StudentManage.Utilities
 {
     public class Format
     {
+        #region Format List Student
         public void FormatLstStudent()
         {
             var _titleStudent = string.Format("{0,-10} {1,-20} {2,-5} {3,-12} {4,-10} {5,-10}", "ID", "Name", "Gender", "Date", "Class", "Course");
@@ -19,6 +20,9 @@ namespace StudentManage.Utilities
                 Console.Write("-");
             }
         }
+        #endregion
+
+        #region Format List Subject
         public void FormatLstSubject()
         {
             var _titleSubject = string.Format("{0,-10} {1,-20} {2,-5}", "ID", "Name", "Number of lesson");
@@ -30,5 +34,20 @@ namespace StudentManage.Utilities
                 Console.Write("-");
             }
         }
+        #endregion
+
+        #region Format List Subject Register
+        public void FormatLstRegister()
+        {
+            var _titleSubjectRegister = string.Format("{0,-10}|{1,-10}|{2,-20}", "ID Student", "ID Subject", "Name of Subject");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(_titleSubjectRegister);
+            Console.ResetColor();
+            for (int i = 0; i < 50; i++)
+            {
+                Console.Write("-");
+            }
+        }
+        #endregion
     }
 }

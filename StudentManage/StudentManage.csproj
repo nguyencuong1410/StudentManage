@@ -55,17 +55,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContainerInstaller\ServiceInstaller.cs" />
     <Compile Include="Data\StudentFileJson.cs" />
     <Compile Include="Data\SubjectFileJson.cs" />
+    <Compile Include="Data\SubjectRegisterFile.cs" />
     <Compile Include="Interface\Data\IStudentData.cs" />
     <Compile Include="Interface\Data\ISubjectData.cs" />
+    <Compile Include="Interface\Data\ISubjectRegisData.cs" />
     <Compile Include="Interface\Service\IStudentService.cs" />
+    <Compile Include="Interface\Service\ISubjectRegisterService.cs" />
     <Compile Include="Interface\Service\ISubjectService.cs" />
+    <Compile Include="Models\Score.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\SubjectRegister.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ScoreService.cs" />
     <Compile Include="Service\StudentService.cs" />
+    <Compile Include="Service\SubjectRegisterService.cs" />
     <Compile Include="Service\SubjectService.cs" />
     <Compile Include="Utilities\Format.cs" />
   </ItemGroup>
