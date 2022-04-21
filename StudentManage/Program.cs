@@ -126,7 +126,7 @@ namespace StudentManage
                             goto menu;
                         }
                     case 7:
-                        Console.WriteLine("Nhập ID Student: ");
+                        Console.Write("Nhập ID Student: ");
                         string check2 = Console.ReadLine();
                         while(listScore.Find(x => x.MaSV == check2) == null)
                         {

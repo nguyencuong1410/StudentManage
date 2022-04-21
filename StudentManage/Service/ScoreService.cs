@@ -66,21 +66,23 @@ namespace StudentManage.Service
         // SHOW LIST SCORE
         public void ShowLstScore(string index, List<Score> listScore)
         {
-            Score result = (from s in listScore where s.MaSV == index select s).FirstOrDefault();
-            Format _format = new Format();
-            _format.FormatLstScore();
-            var formatStr = string.Format("{0,-10} {1,-10} {2,-8} {3,-8} {4,-8} {5,-5}", result.MaSV, result.MaMH, result.DiemTP, result.DiemQT, result.DiemTong, result.DanhGia);
-            if (result.DanhGia == "Trượt")
+            var result = from s in listScore where s.MaSV == index select s;
+            foreach(var x in result)
             {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + formatStr);
-                Console.ResetColor();
+                Format _format = new Format();
+                _format.FormatLstScore();
+                var formatStr = string.Format("{0,-10} {1,-10} {2,-8} {3,-8} {4,-8} {5,-5}", x.MaSV, x.MaMH, x.DiemTP, x.DiemQT, x.DiemTong, x.DanhGia);
+                if (x.DanhGia == "Trượt")
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n" + formatStr);
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.WriteLine("\n" + formatStr);
+                }
             }
-            else
-            {
-                Console.WriteLine("\n" + formatStr);
-            }
-
         }
     }
 }
