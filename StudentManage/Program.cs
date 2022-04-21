@@ -31,11 +31,13 @@ namespace StudentManage
             var _istudentService = container.Resolve<IStudentService>();
             var _isubjectService = container.Resolve<ISubjectService>();
             var _isubjectRegister = container.Resolve<ISubjectRegisterService>();
+            var _iscoreService = container.Resolve<IScoreService>();
             // clean up
             container.Dispose();
             List<Student> listStudent = _istudentService.GetDataStudent();
             List<Subject> listSubject = _isubjectService.GetDataSubject();
             List<SubjectRegister> listRegister = _isubjectRegister.GetDataRegister();
+            List<Score> listScore = _iscoreService.GetDataScore();
             #endregion
 
             // Menu chương trình
@@ -55,10 +57,9 @@ namespace StudentManage
                 Console.WriteLine("|                  4: Đăng ký môn học                      |");
                 Console.WriteLine("|                  5: Xem số môn học đăng ký               |");
                 Console.WriteLine("|                  6: Nhập điểm sinh viên                  |");
-                Console.WriteLine("|                  7: Xem điểm sinh viên                   |");
-                Console.WriteLine("|                  8: Xem kết quả đỗ/trượt                 |");
-                Console.WriteLine("|                  9: Nhập thông tin môn học               |");
-                Console.WriteLine("|                  10: Danh sách môn học                   |");
+                Console.WriteLine("|                  7: Xem điểm sinh viên(đỗ/trượt)         |");
+                Console.WriteLine("|                  8: Nhập thông tin môn học               |");
+                Console.WriteLine("|                  9: Danh sách môn học                    |");
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("+----------------------------------------------------------+");
                 Console.ResetColor();
@@ -110,6 +111,30 @@ namespace StudentManage
                         }
                         _format.FormatLstRegister();
                         _isubjectRegister.ShowListRegisterDetail(index1, listRegister);
+                        break;
+                    case 6:
+                        listScore.Add(_iscoreService.InputScore());
+                        Console.WriteLine("Bạn có muốn tiếp tục(y/n) ?");
+                        string pick2 = Console.ReadLine();
+                        if (pick2 == "y")
+                        {
+                            goto case 6;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            goto menu;
+                        }
+                    case 7:
+                        Console.WriteLine("Nhập ID Student: ");
+                        string check2 = Console.ReadLine();
+                        while(listScore.Find(x => x.MaSV == check2) == null)
+                        {
+                            Console.WriteLine("ID này không tồn tại!");
+                            Console.WriteLine("Nhập lại ID: ");
+                            check2 = Console.ReadLine();
+                        }
+                        _iscoreService.ShowLstScore(check2, listScore);
                         break;
                     case 8:
                         listSubject.Add(_isubjectService.InputSubject());

@@ -49,5 +49,16 @@ namespace StudentManage.Utilities
             }
         }
         #endregion
+        public void FormatLstScore()
+        {
+            var _titleScore = string.Format("{0,-10}|{1,-10}|{2,-8}|{3,-5}|{4,-5}|{5,-10}", "ID Student", "ID Subject","Điểm TP","Điểm QT","Điểm Tổng","Đánh giá");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(_titleScore);
+            Console.ResetColor();
+            for (int i = 0; i < 80; i++)
+            {
+                Console.Write("-");
+            }
+        }
     }
 }

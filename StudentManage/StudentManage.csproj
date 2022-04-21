@@ -56,12 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerInstaller\ServiceInstaller.cs" />
+    <Compile Include="Data\ScoreFileJson.cs" />
     <Compile Include="Data\StudentFileJson.cs" />
     <Compile Include="Data\SubjectFileJson.cs" />
     <Compile Include="Data\SubjectRegisterFile.cs" />
+    <Compile Include="Interface\Data\IScoreFileJson.cs" />
     <Compile Include="Interface\Data\IStudentData.cs" />
     <Compile Include="Interface\Data\ISubjectData.cs" />
     <Compile Include="Interface\Data\ISubjectRegisData.cs" />
+    <Compile Include="Interface\Service\IScoreService.cs" />
     <Compile Include="Interface\Service\IStudentService.cs" />
     <Compile Include="Interface\Service\ISubjectRegisterService.cs" />
     <Compile Include="Interface\Service\ISubjectService.cs" />

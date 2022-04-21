@@ -25,6 +25,8 @@ namespace StudentManage.ContainerInstaller
             container.Register(Component.For<ISubjectData>().ImplementedBy<SubjectFileJson>().LifestyleTransient());
             container.Register(Component.For<ISubjectRegisterService>().ImplementedBy<SubjectRegisterService>().LifestyleTransient());
             container.Register(Component.For<ISubjectRegisData>().ImplementedBy<SubjectRegisterFile>().LifestyleTransient());
+            container.Register(Component.For<IScoreService>().ImplementedBy<ScoreService>().LifestyleTransient());
+            container.Register(Component.For<IScoreFileJson>().ImplementedBy<ScoreFileJson>().LifestyleTransient());
         }
     }
 }
