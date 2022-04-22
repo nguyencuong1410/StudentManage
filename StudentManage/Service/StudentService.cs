@@ -35,14 +35,11 @@ namespace StudentManage.Service
             Console.Write("ID: ");
             // check trùng ID
             string check = Console.ReadLine();
-            foreach(var s in listStudent)
+           while(listStudent.Select(s => s.MaSV).Contains(check))
             {
-                if(check == s.MaSV)
-                {
-                    Console.WriteLine("ID đã tồn tại, mời nhập lại");
-                    Console.Write("ID: ");
-                    check = Console.ReadLine();
-                }
+                Console.WriteLine("Trùng ID rồi, nhập lại đi bro");
+                Console.Write("ID: ");
+                check = Console.ReadLine();
             }
             _student.MaSV = check;
             Console.Write("Name: ");

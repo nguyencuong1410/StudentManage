@@ -47,9 +47,23 @@ namespace StudentManage.Service
             Console.Write("ID Subject cần nhập điểm: ");
             score.MaMH = Console.ReadLine();
             Console.Write("Điểm TP: ");
-            score.DiemTP = float.Parse(Console.ReadLine());
+            float check = float.Parse(Console.ReadLine());
+            if(check < 0 || check > 10)
+            {
+                Console.WriteLine("Sai định dạng, mời nhập lại!");
+                Console.Write("Điểm TP: ");
+                check = float.Parse(Console.ReadLine());
+            }
+            score.DiemTP = check;
             Console.Write("Điểm QT: ");
-            score.DiemQT = float.Parse(Console.ReadLine());
+            float check1 = float.Parse(Console.ReadLine());
+            if (check1 < 0 || check1 > 10)
+            {
+                Console.WriteLine("Sai định dạng, mời nhập lại!");
+                Console.Write("Điểm QT: ");
+                check1 = float.Parse(Console.ReadLine());
+            }
+            score.DiemQT = check1;
             score.DiemTong = (score.DiemTP + score.DiemQT) / 2;
             if (score.DiemTong >= 4)
             {
