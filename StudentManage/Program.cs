@@ -26,8 +26,8 @@ namespace StudentManage
             WindsorContainer container = new WindsorContainer();
             //use method install ServiceInstaller to container
             container.Install(new ServiceInstaller());
-            //muốn dùng container thì dùng method Resolve
-            // Resolve an object of IStudentService
+            //muốn dùng các method của Interface thì ta gọi container.Resolve<Interface>()
+            // Resolve an object của IStudentService
             var _istudentService = container.Resolve<IStudentService>();
             var _isubjectService = container.Resolve<ISubjectService>();
             var _isubjectRegister = container.Resolve<ISubjectRegisterService>();

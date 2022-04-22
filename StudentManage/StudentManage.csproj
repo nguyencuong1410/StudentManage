@@ -39,6 +39,9 @@
     <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.5.1.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -56,18 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerInstaller\ServiceInstaller.cs" />
-    <Compile Include="Data\ScoreFileJson.cs" />
-    <Compile Include="Data\StudentFileJson.cs" />
-    <Compile Include="Data\SubjectFileJson.cs" />
-    <Compile Include="Data\SubjectRegisterFile.cs" />
-    <Compile Include="Interface\Data\IScoreFileJson.cs" />
-    <Compile Include="Interface\Data\IStudentData.cs" />
-    <Compile Include="Interface\Data\ISubjectData.cs" />
-    <Compile Include="Interface\Data\ISubjectRegisData.cs" />
-    <Compile Include="Interface\Service\IScoreService.cs" />
-    <Compile Include="Interface\Service\IStudentService.cs" />
-    <Compile Include="Interface\Service\ISubjectRegisterService.cs" />
-    <Compile Include="Interface\Service\ISubjectService.cs" />
+    <Compile Include="Data\Dapper\StudentDapper.cs" />
+    <Compile Include="Data\FileJson\ScoreFileJson.cs" />
+    <Compile Include="Data\FileJson\StudentFileJson.cs" />
+    <Compile Include="Data\FileJson\SubjectFileJson.cs" />
+    <Compile Include="Data\FileJson\SubjectRegisterFile.cs" />
+    <Compile Include="Interface\Data\IFileJson\IScoreFileJson.cs" />
+    <Compile Include="Interface\Data\IFileJson\IStudentData.cs" />
+    <Compile Include="Interface\Data\IFileJson\ISubjectData.cs" />
+    <Compile Include="Interface\Data\IFileJson\ISubjectRegisData.cs" />
+    <Compile Include="Interface\IService\IScoreService.cs" />
+    <Compile Include="Interface\IService\IStudentService.cs" />
+    <Compile Include="Interface\IService\ISubjectRegisterService.cs" />
+    <Compile Include="Interface\IService\ISubjectService.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Subject.cs" />
@@ -84,6 +88,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interface\Data\IDapper\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

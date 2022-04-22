@@ -32,12 +32,31 @@ namespace StudentManage.Service
             List<Student> listStudent = _stuService.GetDataStudent();
             List<Subject> listSubject = _stuSubject.GetDataSubject();
             SubjectRegister _subjectRegister = new SubjectRegister();
+            //DS sinh viên
             Console.WriteLine("\n---Danh sách sinh viên---");
             _stuService.ShowListStudent(listStudent);
+            //DS môn học
             Console.WriteLine("\n---Danh sách môn học---");
             _stuSubject.ShowListSubject(listSubject);
+            // check ID
             Console.Write("Nhập ID sinh viên: ");
-            _subjectRegister.MaSV = Console.ReadLine();
+            string check = Console.ReadLine();
+            while(!listStudent.Select(s => s.MaSV).Contains(check))
+            {
+                Console.WriteLine("Không có ID Student này!");
+                Console.Write("Nhập lại ID: ");
+                check = Console.ReadLine();
+            }
+            //foreach(var x in listStudent)
+            //{
+            //    if(check != x.MaSV)
+            //    {
+            //        Console.WriteLine("Không có ID Student này!");
+            //        Console.Write("Nhập lại ID: ");
+            //        check = Console.ReadLine();
+            //    }
+            //}
+            _subjectRegister.MaSV = check;
             Console.Write("Nhập ID môn học muốn đăng ký: ");
             _subjectRegister.MaMH = Console.ReadLine();
             Console.Write("Nhập tên môn học: ");

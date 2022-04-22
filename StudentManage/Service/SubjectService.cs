@@ -39,9 +39,5 @@ namespace StudentManage.Service
                 Console.WriteLine("\n{0,-10} {1,-20} {2,-5}", s.MaMH, s.TenMH, s.Sotiethoc);
             }
         }
-        public void SubjectRegister()
-        {
-
-        }
     }
 }
