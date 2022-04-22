@@ -22,7 +22,8 @@ namespace StudentManage.Service
         {
             return _subjectRegisData.GetData();
         }
-        // Register Subject
+        
+        #region REGISTER SUBJECT
         public SubjectRegister Input ()
         {
             WindsorContainer container = new WindsorContainer();
@@ -47,15 +48,6 @@ namespace StudentManage.Service
                 Console.Write("Nhập lại ID: ");
                 check = Console.ReadLine();
             }
-            //foreach(var x in listStudent)
-            //{
-            //    if(check != x.MaSV)
-            //    {
-            //        Console.WriteLine("Không có ID Student này!");
-            //        Console.Write("Nhập lại ID: ");
-            //        check = Console.ReadLine();
-            //    }
-            //}
             _subjectRegister.MaSV = check;
             Console.Write("Nhập ID môn học muốn đăng ký: ");
             _subjectRegister.MaMH = Console.ReadLine();
@@ -64,6 +56,7 @@ namespace StudentManage.Service
             _subjectRegisData.AddRegister(_subjectRegister);
             return _subjectRegister;
         }
+        #endregion
         public void ShowLstRegister(List<SubjectRegister> listSubjectregister)
         {
             foreach(var s in listSubjectregister)
@@ -71,7 +64,8 @@ namespace StudentManage.Service
                 Console.WriteLine("\n{0,-10}  {1,-10}  {2,-20}", s.MaSV, s.MaMH, s.TenMH);
             }
         }
-        // Show list subject follow ID Student
+
+        #region SHOW LIST SUBJECT FOLLOW ID STUDENT
         public void ShowListRegisterDetail(string index, List<SubjectRegister> listSubjectregister)
         {
             var result = from s in listSubjectregister where s.MaSV == index select s;
@@ -81,5 +75,6 @@ namespace StudentManage.Service
             }
             
         }
+        #endregion
     }
 }
