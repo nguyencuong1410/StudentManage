@@ -20,7 +20,7 @@ namespace StudentManage.ContainerInstaller
         // Hàm đăng ký Component vào DI container
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            // Chúng ta phải Register để Container biết phụ thuộc lớp nào để khởi tạo
+            // phải Register để Container biết phụ thuộc lớp nào để khởi tạo
             // dùng Register IStudentService tới vùng chứa của Container và ánh xạ nó tới StudentService 
             // Nếu muốn sử dụng các method của IStudentService thì ta phải dùng method Register trước sau đó dùng method Resolve để sử dụng
 
