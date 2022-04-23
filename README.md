@@ -7,8 +7,7 @@ StudentManage
       <li>Use programming language C#</li>
       <li>Author: Nguyễn Mạnh Cường</li>
     </ul>
-    <img src="https://miro.medium.com/max/1400/0*GCrcXTVqwSAfA3G2" width="50%"/>
-    <a><img src="https://img.shields.io/badge/Skype-Blue?style=for-the-badge&logo=skype&logoColor=white" alt="Skype"/></a>
+    <img src="https://i.imgur.com/rNbNEwf.png" width="50%"/>
     <br/>
 </ul>
     
