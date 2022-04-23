@@ -8,7 +8,7 @@ StudentManage
       <li>Author: Nguyễn Mạnh Cường</li>
     </ul>
     <img src="https://miro.medium.com/max/1400/0*GCrcXTVqwSAfA3G2" width="50%"/>
-    /invite/bbsLTckg06yz"><img src="https://img.shields.io/badge/Skype-Blue?style=for-the-badge&logo=skype&logoColor=white" alt="Skype"/></a>
+    <a><img src="https://img.shields.io/badge/Skype-Blue?style=for-the-badge&logo=skype&logoColor=white" alt="Skype"/></a>
     <br/>
 </ul>
     
