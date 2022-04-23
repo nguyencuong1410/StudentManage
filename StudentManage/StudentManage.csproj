@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerInstaller\ServiceInstaller.cs" />
+    <Compile Include="Data\Dapper\ScoreDapper.cs" />
     <Compile Include="Data\Dapper\StudentDapper.cs" />
     <Compile Include="Data\Dapper\SubjectDapper.cs" />
     <Compile Include="Data\FileJson\ScoreFileJson.cs" />
