@@ -1,6 +1,3 @@
 # StudentManage
 StudentManage
-<p align="center">
-  <img src="![image](https://user-images.githubusercontent.com/89558925/164873771-0e8079d7-9cf0-466e-a5a3-87fbb103a194.png)
-" width="350" title="hover text">
-</p>
+![alt text](![image](https://user-images.githubusercontent.com/89558925/164873804-e3f6f34e-dc66-4f90-b691-51083dd459b1.png))
