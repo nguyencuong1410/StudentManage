@@ -7,8 +7,8 @@
 		<property name="connection.driver_class">
 			NHibernate.Driver.SqlClientDriver
 		</property>
-		<property name="connectionString">
-			Data Source=LAPTOP-NMC\SQLEXPRESS;Initial Catalog=Quanlysv;Integrated Security=True;
+		<property name="connection.connection_string">
+			Data Source=localhost\SQLEXPRESS;Initial Catalog=Quanlysv;Integrated Security=True
 		</property>
 		<property name="dialect">
 			NHibernate.Dialect.MsSql2012Dialect

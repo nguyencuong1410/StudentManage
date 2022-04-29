@@ -5,6 +5,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using StudentManage.Interface.Service;
 using StudentManage.Service;
 using StudentManage.Data.Dapper;
+using StudentManage.Data.Hibernate;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,8 +34,9 @@ namespace StudentManage.ContainerInstaller
             container.Register(Component.For<ISubjectRegisData>().ImplementedBy<SubjectRegisterFile>().LifestyleTransient());
             container.Register(Component.For<IScoreService>().ImplementedBy<ScoreService>().LifestyleTransient());
             container.Register(Component.For<IScoreFileJson>().ImplementedBy<ScoreFileJson>().LifestyleTransient());
-            container.Register(Component.For<IStudentData>().ImplementedBy<StudentDapper>().DependsOn(Dependency.OnValue("conStr", conStr)));
+            //container.Register(Component.For<IStudentData>().ImplementedBy<StudentDapper>().DependsOn(Dependency.OnValue("conStr", conStr)));
             container.Register(Component.For<ISubjectData>().ImplementedBy<SubjectDapper>().DependsOn(Dependency.OnValue("conStr", conStr)));
+            container.Register(Component.For<IStudentData>().ImplementedBy<StudentHibernate>().LifestyleTransient());
         }
     }
 }

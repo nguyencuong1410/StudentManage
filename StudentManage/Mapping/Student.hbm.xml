@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="Swinkaran.Nhbnt.Web" namespace="Swinkaran.Nhbnt.Web.Models">
-	<class name="Student" table="SinhVien" dynamic-update="true" >
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="StudentManage" namespace="StudentManage.Models">
+	<class name="Student" table="tblSinhVien" dynamic-update="true" >
 		<cache usage="read-write"/>
-		<id name="sMaSV"></id>
-		<property name="sTenSV"  />
-		<property name="sGioitinh" />
-		<property name="dNgaysinh" />
-		<property name="sLop" />
-		<property name="sKhoa" />
+		<id name="MaSV" column="MaSV"></id>
+		<property name="HoTen" column ="HoTen"  />
+		<property name="GioiTinh" column ="Gioitinh" />
+		<property name="NgaySinh" column="Ngaysinh"/>
+		<property name="Lop" column ="Lop" />
+		<property name="Khoa" column="Khoa" />
 	</class>
 </hibernate-mapping>

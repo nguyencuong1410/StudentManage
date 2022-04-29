@@ -8,12 +8,12 @@ namespace StudentManage.Models
 {
     public class Student
     {
-        public string MaSV { get; set; }
-        public string HoTen { get; set; }
-        public string GioiTinh { get; set; }
-        public string NgaySinh { get; set; }
-        public string Lop { get; set; }
-        public string Khoa { get; set; }
+        public virtual string MaSV { get; set; }
+        public virtual string HoTen { get; set; }
+        public virtual string GioiTinh { get; set; }
+        public virtual string NgaySinh { get; set; }
+        public virtual string Lop { get; set; }
+        public virtual string Khoa { get; set; }
     }
 
 }
