@@ -79,8 +79,9 @@ namespace StudentManage.Service
         // Show student detail
         public void StudentDetail(string index, List<Student> listStudent)
         {
-            Student result = (from s in listStudent where s.MaSV == index select s).FirstOrDefault(); 
-            Console.WriteLine("\n{0,-10} {1,-20} {2,-6} {3,-12} {4,-11} {5,-10}", result.MaSV, result.HoTen, result.GioiTinh, result.NgaySinh, result.Lop, result.Khoa);
+            //Student result = (from s in listStudent where s.MaSV == index select s).FirstOrDefault();
+            Student result1 = listStudent.Where(f => f.MaSV == index).FirstOrDefault();
+            Console.WriteLine("\n{0,-10} {1,-20} {2,-6} {3,-12} {4,-11} {5,-10}", result1.MaSV, result1.HoTen, result1.GioiTinh, result1.NgaySinh, result1.Lop, result1.Khoa);
         }
         #endregion
     }

@@ -14,12 +14,13 @@ namespace StudentManage.Data.Hibernate
     {
         public void AddStudent(Student stu)
         {
-           using (ISession session = NHibernateSessions.OpenSession())
+            // TODO: Add insert login here
+           using (ISession session = NHibernateSessions.OpenSession()) // open sesstion to connect to the database
             {
-                using(ITransaction transaction = session.BeginTransaction())
+                using(ITransaction transaction = session.BeginTransaction()) // begin a transaction
                 {
-                    session.Save(stu);
-                    transaction.Commit();
+                    session.Save(stu); // save stu in session
+                    transaction.Commit(); // commit the change to the database
                 }
             }
         }
@@ -29,7 +30,7 @@ namespace StudentManage.Data.Hibernate
             List<Student> students = new List<Student>();
             using (ISession session = NHibernateSessions.OpenSession())
             {
-                students = session.Query<Student>().ToList();
+                students = session.Query<Student>().ToList(); // Query to get all the student
             }
             return students;
         }

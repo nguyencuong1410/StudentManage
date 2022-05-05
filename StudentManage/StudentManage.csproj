@@ -83,7 +83,9 @@
     <Compile Include="Data\FileJson\StudentFileJson.cs" />
     <Compile Include="Data\FileJson\SubjectFileJson.cs" />
     <Compile Include="Data\FileJson\SubjectRegisterFile.cs" />
+    <Compile Include="Data\Hibernate\ScoreHibernate.cs" />
     <Compile Include="Data\Hibernate\StudentHibernate.cs" />
+    <Compile Include="Data\Hibernate\SubjectHibernate.cs" />
     <Compile Include="Interface\Data\IFileJson\IScoreFileJson.cs" />
     <Compile Include="Interface\Data\IFileJson\IStudentData.cs" />
     <Compile Include="Interface\Data\IFileJson\ISubjectData.cs" />
