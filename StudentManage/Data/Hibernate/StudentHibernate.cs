@@ -20,7 +20,7 @@ namespace StudentManage.Data.Hibernate
                 using(ITransaction transaction = session.BeginTransaction()) // begin a transaction
                 {
                     session.Save(stu); // save stu in session
-                    transaction.Commit(); // commit the change to the database
+                    transaction.Commit(); // commit(ghi lại) the change to the database
                 }
             }
         }
