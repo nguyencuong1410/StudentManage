@@ -8,7 +8,7 @@ StudentManage
         <li> Database: SQL Server
         <li>Author: Nguyễn Mạnh Cường</li>
     </ul>
-    <img src="https://i.imgur.com/KWEq1ne.png" width="50%"/>
+
     <br/>
 </ul>
     
